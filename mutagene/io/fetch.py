@@ -8,6 +8,8 @@ from tqdm import tqdm
 import logging
 logger = logging.getLogger(__name__)
 
+GENOME_ERROR_MESSAGE = """Requires 'genome' argument (e.g., [hg19|hg38|mm10|...]).  Use 'mutagene fetch genome' to download genome assemblies.  See http://hgdownload.cse.ucsc.edu/downloads.html for available reference genomes."""
+
 
 # ########### URL ##############
 def download_from_url(url, dst):
