@@ -1,10 +1,9 @@
 import sys
 import logging
-from mutagene.io.fetch import fetch_genome, fetch_cohorts, fetch_examples, fetch_MSKCC
+from mutagene.io.fetch import fetch_genome, fetch_cohorts, fetch_examples, fetch_MSKCC, GENOME_ERROR_MESSAGE
 
 
 logger = logging.getLogger(__name__)
-genome_error_message = 'requires genome name argument -g hg19, hg38, mm10, see http://hgdownload.cse.ucsc.edu/downloads.html for more'
 
 
 class FetchMenu(object):
@@ -84,7 +83,7 @@ Partial download is supported: if the process is interrupted run the same comman
     def genome(cls, args):
         if args.resource == 'genome':
             if not args.genome:
-                logger.warning(genome_error_message)
+                logger.warning(GENOME_ERROR_MESSAGE)
                 return
             fetch_genome(args.genome)
             logger.info("Twobit file saved to current directory")

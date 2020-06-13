@@ -22,6 +22,7 @@ twobitreader = "*"
 tqdm = "*"
 PyVCF = "*"
 pytest-securestore = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.7"
