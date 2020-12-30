@@ -130,7 +130,7 @@ def read_MAF_with_genomic_context(infile, genome, motifs=False):
 
             if data.variant_classification.lower() not in ("nonsense_mutation", "missense_mutation", "silent"):
                 N_skipped += 1
-                logger.debug("Variant_Classification")
+                logger.debug(f"Variant_Classification: {data.variant_classification.lower()}")
                 continue
 
             chrom = None
